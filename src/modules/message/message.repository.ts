@@ -1,5 +1,7 @@
+import { Injectable } from '@nestjs/common';
 import { readFileSync, writeFileSync } from 'fs';
 
+@Injectable()
 export class MessageRepository {
   private path_file = './src/data/message.json';
 

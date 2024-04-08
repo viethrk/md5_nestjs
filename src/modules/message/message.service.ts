@@ -4,8 +4,8 @@ import { MessageRepository } from './message.repository';
 @Injectable()
 export class MessageService {
   private messageRepo: MessageRepository;
-  constructor() {
-    this.messageRepo = new MessageRepository();
+  constructor(messageRepo: MessageRepository) {
+    this.messageRepo = messageRepo;
   }
 
   findAll() {

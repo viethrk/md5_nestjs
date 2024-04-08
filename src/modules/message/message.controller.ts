@@ -13,8 +13,8 @@ import { MessageService } from './message.service';
 export class MessageController {
   private service: MessageService;
 
-  constructor() {
-    this.service = new MessageService();
+  constructor(service: MessageService) {
+    this.service = service;
   }
 
   @Get()
