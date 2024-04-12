@@ -8,7 +8,10 @@ export class UserController {
 
   @Get()
   async getUser() {
-    return await this.userService.findAll();
+    const users = await this.userService.findAll();
+    console.log(users[0]?.photos);
+
+    return users;
   }
 
   @Post()

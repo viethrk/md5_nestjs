@@ -9,6 +9,7 @@ import { DecoratorService } from './modules/decorator/decorator.service';
 import { MessageModule } from './modules/message/message.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UserEntity } from './core/entity/user.entity';
+import { PhotoEntity } from './core/entity/photo.entity';
 
 @Module({
   imports: [
@@ -19,7 +20,7 @@ import { UserEntity } from './core/entity/user.entity';
       username: 'root',
       password: 'root',
       database: 'md5_test',
-      entities: [UserEntity],
+      entities: [UserEntity, PhotoEntity],
       synchronize: true,
     }),
     UserModule,

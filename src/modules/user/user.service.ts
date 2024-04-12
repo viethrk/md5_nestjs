@@ -12,11 +12,19 @@ export class UserService {
   ) {}
 
   async findAll() {
-    return await this.userRepo.find();
+    return await this.userRepo.find({
+      relations: {
+        photos: true,
+      },
+    });
   }
 
   async createUser(userNew: UserDto) {
     const user = this.userRepo.create(userNew);
     return await this.userRepo.save(user);
+    // save 1: luu thong tin user
+    // this.userRepo.save(user);
+    // save 1: luu thong tin user
+    // this.bankRepo.save(bank);
   }
 }
