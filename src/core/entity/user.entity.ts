@@ -12,6 +12,12 @@ export class UserEntity {
   @Column()
   age: number;
 
+  @Column({ name: 'user_name' })
+  userName: string;
+
+  @Column({ name: 'password' })
+  password: string;
+
   @OneToMany((type) => PhotoEntity, (photo) => photo.user)
   photos: PhotoEntity[];
 }
