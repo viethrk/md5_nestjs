@@ -19,6 +19,13 @@ export class UserService {
     });
   }
 
+  async findByUserAndPass(userName: string, password: string) {
+    return this.userRepo.findOneBy({
+      userName,
+      password,
+    });
+  }
+
   async createUser(userNew: UserDto) {
     const user = this.userRepo.create(userNew);
     return await this.userRepo.save(user);

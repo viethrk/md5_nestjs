@@ -10,6 +10,7 @@ import { MessageModule } from './modules/message/message.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UserEntity } from './core/entity/user.entity';
 import { PhotoEntity } from './core/entity/photo.entity';
+import { AuthModule } from './modules/auth/auth.module';
 
 @Module({
   imports: [
@@ -27,6 +28,7 @@ import { PhotoEntity } from './core/entity/photo.entity';
     BookModule,
     ValidateModule,
     MessageModule,
+    AuthModule,
   ],
   controllers: [AppController, DecoratorController],
   providers: [AppService, DecoratorService],
